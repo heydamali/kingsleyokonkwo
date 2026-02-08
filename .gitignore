@@ -1,0 +1,7 @@
+.DS_Store
+_site/
+
+# Local Netlify folder
+.netlify
+
+.jekyll*

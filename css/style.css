@@ -1,0 +1,580 @@
+body {
+  margin: 0;
+  background: rgb(2 3 33 / 91%);
+  background-position: center;
+  font-family: "PT Sans", sans-serif;
+  transition: background-color 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+p {
+  margin: 5px 0;
+}
+
+ul {
+  margin: 0;
+  list-style: none; /* Remove default bullets */
+}
+
+ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #0066CC; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+ul ol li::before {
+  content: "";
+}
+
+ul.posts {
+  padding: 0;
+}
+
+ul.posts li::before {
+  content: ""; 
+  width: 0; 
+  margin-left: 0;
+}
+
+/* TABLE STYLING */
+table {
+  border-collapse: collapse;
+  border: 1px solid;
+}
+
+thead {
+  text-align: left;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+/* END TABLE STYLING */
+
+main {
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+  max-width: 800px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+}
+
+main h1 {
+  font-size: 2em;
+  font-weight: 900;
+  margin: 3vw 0;
+  line-height: 2.5rem;
+}
+
+main h2 {
+  font-size: 1.5em;
+}
+
+main h3 {
+  font-size: 1.25em;
+}
+
+main h4 {
+  font-size: 1.17em;
+}
+
+main a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main strong {
+  font-size: 105%;
+}
+
+main.landing {
+  min-height: auto;
+  justify-content: flex-start;
+  padding-top: 20px;
+  flex-grow: 1;
+}
+
+main.landing h2 {
+  margin: 0 0 10px 0;
+  padding: 0 20px;
+}
+
+main.projects {
+  min-height: 80vh;
+  /* margin-top: 0; */
+  margin-bottom: 0;
+  justify-content: flex-start;
+}
+
+main.blog {
+  margin: auto;
+  max-width: auto;
+}
+
+main.blog-list {
+  margin: 2vw auto;
+  justify-content: flex-start;
+}
+
+main.blog-list h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  line-height: 2rem;
+}
+
+main.blog-list h2 {
+  font-size: 1.25em;
+  margin: 1em 0 0;
+}
+
+main.blog-list a.external {
+  color: #0066CC;
+}
+
+main.blog-list .posts {
+  margin: 1em 0;
+}
+
+main.blog-list ul  {
+  margin: 1em 0;
+}
+
+main.blog-list ul li  {
+  margin-bottom: 0.6rem;
+}
+
+main.blog-list ul li::before  {
+  margin-left: -0.2em;
+}
+
+main.blog img {
+  width: 100%;
+  margin: 15px 0;
+  background: white;
+  padding: 10px;
+}
+
+main.blog.dark img {
+  background: #1E1E1E;
+}
+
+main.no-image-styling img {
+    background: none;
+    padding: 0;
+}
+
+main.blog blockquote {
+  border-left: 0.5px solid white;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+main.blog blockquote p {
+  display: inline;
+}
+
+main.blog h2 {
+  margin-block-end: 0.43em;
+}
+
+main.blog h3 {
+  margin-block-start: 0.43em;
+  margin-block-end: 0.43em;
+}
+
+main.blog h4 {
+  margin-block-start: 0.43em;
+  margin-block-end: 0.43em;
+}
+
+.blog a {
+  color: #0066CC;
+}
+
+.blog-title {
+  margin-bottom: 1em;
+}
+
+.blog-title h1 {
+  margin-bottom: 0;
+}
+.blog-title h2 {
+  margin-top: 0;
+}
+
+.blog-title .title-date {
+  font-size: smaller;
+  color: rgb(201 201 214);
+}
+
+.posts .date {
+  font-size: small;
+  color: #0066cc;
+  margin: 0;
+}
+
+.posts .description {
+  font-size: small;
+  margin: 0;
+}
+
+header {
+  color: white;
+  background: rgb(2 3 33 / 91%);
+  padding: 20px 30px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.header-title a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 102, 204, 0.3);
+}
+
+header .text {
+  color: #fff;
+  padding: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header .social-links {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.social-links > span {
+  margin: 0 5px;
+}
+
+.social-links span > a {
+  color: #fff;
+}
+
+img.gravatar {
+    width: 100%;
+    max-width: 15vw;
+    min-width: 200px;
+    border: 1px solid;
+    border-radius: 50%;
+    margin: 2vw 0;
+}
+
+footer {
+  color: white;
+  padding: 20px 30px;
+  text-align: left;
+}
+
+footer a {
+  color: inherit;
+}
+
+.colored {
+  color: #0066CC;
+}
+
+.colored:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+
+.link-flex {
+  display: flex;
+  padding: 2vw 0 0;
+  width: 80%;
+  line-height: initial;
+}
+.link-flex i {
+  font-size: 200%;
+}
+
+.link-wrapper {
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+.link-item {
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+.link-item small {
+  font-size: 0.7rem;
+}
+
+.footer {
+  font-size: x-small;
+  padding-top: 5vw;
+  text-align: center;
+}
+code {
+  line-height: 20px;
+  letter-spacing: normal;
+  /* border-radius: 5px; */
+}
+.share-container {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.share-container h6 {
+  margin: 0;
+  color: #0066CC;
+  text-transform: uppercase;
+}
+
+.share-container div {
+  display: flex;
+  font-size: 250%;
+  justify-content: center;
+}
+
+.share-container span {
+  margin-right: 25px;
+}
+
+.share-container a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.about-container {
+  border-top: 1px solid white;
+  margin-top: 3vw;
+  padding-top: 2vw;
+}
+
+.about-container p {
+  text-align: center;
+}
+
+main.blog ul, main.blog ol {
+  padding-inline-start: 20px;
+}
+
+ul.about {
+  padding: 0;
+}
+
+ul.about li.about-item.first {
+  margin: 0;
+}
+
+ul.about li.about-item {
+  margin: 1.5vw 0;
+}
+
+ul.about li.about-item h3 {
+  margin-bottom: 0;
+}
+
+ul.about li.about-item::before{
+  content: none;
+}
+
+.about-content {
+  padding: 0 20px;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+}
+
+.about-header span {
+  font-size: 200%;
+  color: #0066CC; /* Change the color */
+}
+
+span.theme-switcher {
+  background-image: url(/img/icons8-sun-240-new.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease;
+}
+
+/* Light theme styles */
+span.theme-switcher.light-theme {
+  background-image: url(/img/icons8-crescent-moon-100-new.png);
+}
+
+body.light-theme {
+  background: #fff;
+}
+
+header.light-theme {
+  background: #fff;
+  border-bottom: 1px solid rgba(77, 77, 77, 0.2);
+}
+
+header.light-theme .text {
+  color: #05071F;
+}
+
+header.light-theme .header-title {
+  color: #05071F;
+}
+
+.social-links.light-theme span > a {
+  color: #05071F;
+}
+
+main.light-theme {
+  color: rgb(2 3 33 / 91%);
+}
+
+main.blog.light-theme .title-date {
+  color: rgb(121 121 138);
+}
+
+main.blog.light-theme blockquote {
+  border-left: 0.8px solid rgb(2 3 33 / 91%);
+}
+
+.about-container.light-theme {
+  border-top: 1px solid rgb(2 3 33 / 91%);  
+}
+
+.share-container.light-theme a {
+  color: rgb(2 3 33 / 91%);  
+}
+
+footer.light-theme {
+  color: rgb(2 3 33 / 91%);  
+}
+/* End Light theme styles */
+
+@media (max-width: 768px) {
+  .link-flex {
+    flex-direction: column;
+    min-height: 40vh;
+  }
+  main.blog {
+    margin: 10vw;
+  }
+  main.blog img {
+    width: 90%;
+  }
+  .about-content {
+    padding: 0;
+  }
+  .about-item.first{
+    border-top: none;
+  }
+  .about-item.last {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 478px) {
+  main, main.blog  {
+    width: 80%;
+    margin: auto;
+    margin: 10vw auto;
+  }
+
+  .link-flex {
+    flex-direction: column;
+    min-height: 40vh;
+    width: 100%;
+    padding-top: 10vw;
+  }
+
+  .link-wrapper {
+    flex-direction: column;
+    min-height: 30vh;
+  }
+  main.blog ul, main.blog ol {
+    padding-inline-start: 10px;
+  }
+
+  main.blog.full-image img {
+    width: 96vw;
+    margin-left: -16vw;
+  }
+}
+
+/* Github Gist */
+/* Body */
+.gist-data tbody { background-color: #1E1E1E; }
+
+/* Line Numbers */
+.gist-data tbody td:nth-of-type(1) {
+  color: #2B91AF !important;
+}
+
+/* Code */
+.gist-data tbody td:nth-of-type(2){
+  color: #FFFFFF !important;
+}
+
+/* Comments */
+.pl-c
+{
+  color: #57A64A !important;
+}
+
+/* Function */
+.pl-k, tbody tr:first-child .blob-code, tbody tr:last-child .blob-code
+{
+  color: #569CD6 !important;
+}
+
+/* Function Name */
+.pl-en
+{
+  color: #FFFFFF !important;
+}
+
+/* Function Method */
+.pl-c1
+{
+  color: #FFFFFF !important;
+}
+/* "'s around Strings */
+.pl-pds
+{
+  color: #D69D85 !important;
+}
+
+/* Strings */
+.pl-s
+{
+  color: #D69D85 !important;
+}
+/* Github Gist */
